@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\Quote\Model\ResourceModel\Quote" type="Essesolutions\CoreFix\Quote\Model\ResourceModel\Quote" />
+
+    <type name="Magento\CatalogSearch\Model\Adapter\Mysql\Aggregation\DataProvider">
+        <arguments>
+            <argument name="range" xsi:type="object">Magento\Catalog\Model\Layer\Filter\Price\Range\Proxy</argument>
+        </arguments>
+        <plugin name="fixAttributeAggregation" type="Essesolutions\CoreFix\CatalogSearch\Plugin\Adapter\Mysql\Aggregation\DataProvider" />
+    </type>
+
+</config>
